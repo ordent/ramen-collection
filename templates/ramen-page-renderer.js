@@ -1,0 +1,86 @@
+/**
+ * `ramen-page-renderer` Description
+ *
+ * @summary ShortDescription.
+ * @customElement
+ * @polymer
+ * @extends {Polymer.Element}
+ */
+let editor = document.createElement("div");
+let quill = new Quill(editor);
+window.ramen = {};
+window.ramen.quill = quill;
+window.ramen.editor = editor;
+class RamenPageRenderer extends Polymer.Element {
+    /**
+     * String providing the tag name to register the element under.
+     */
+    static get is() {
+        return 'ramen-page-renderer';
+    }
+
+    /**
+     * Object describing property-related metadata used by Polymer features
+     */
+    static get properties() {
+        return {
+            inject: {
+                type: Object,
+                value: function () {
+                    return undefined;
+                },
+                computed: '_computeInject(target, parent)'
+            },
+            data: {
+                type: String,
+                value: undefined,
+                observer: '_dataChanged'
+            }
+        };
+    }
+
+    _computeInject(target, parent) {
+        // if (parent == undefined) {
+        //     if (target instanceof Object) {
+        //         return target;
+        //     } else {
+        //         console.log(this.parentNode);
+        //     }
+        // } else {
+        //     return parent.parentElement.querySelector(target);
+        // }
+    }
+
+    _dataChanged(n) {
+        if (n != undefined) {
+            let quill = window.ramen.quill;
+            let editor = window.ramen.editor;
+            quill.setContents(JSON.parse(n));
+            let html = editor.querySelector(".ql-editor").innerHTML;
+            this.$.content.innerHTML = html;
+        }
+    }
+
+    /**
+     * Instance of the element is created/upgraded. Use: initializing state,
+     * set up event listeners, create shadow dom.
+     * @constructor
+     */
+    constructor() {
+        super();
+    }
+
+    /**
+     * Use for one-time configuration of your component after local DOM is initialized. 
+     */
+    ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+    }
+
+}
+
+window.customElements.define(RamenPageRenderer.is, RamenPageRenderer);

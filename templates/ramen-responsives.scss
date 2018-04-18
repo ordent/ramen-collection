@@ -1,0 +1,318 @@
+/*!  
+* CSS RESPONSIVES START 
+**/
+
+$mobile : 425px;
+$tablet : 768px;
+$desktop : 1024px;
+$deskhd : 1440px;
+
+.container{
+    width: 95%;
+    @media (max-width : $mobile){
+        width: 90%;
+    }
+    @media (min-width: $mobile) and (max-width: $tablet) {
+        width: 85%;
+    }
+    @media (min-width: $tablet) and (max-width: $desktop){
+        width: 1000px;
+    }
+    @media (min-width: $desktop) and (max-width: $deskhd){
+        width: 1280px;
+    }
+    @media(min-width: $deskhd){
+        width: 1440px;
+    }
+}
+
+@each $width in 95, 90, 85, 80, 75, 70, 65, 60, 55, 50{
+    .container.#{$width}{
+        @media(min-width : $tablet){
+            width: ($width/100) * 100%;
+        }
+        @media(min-width : $desktop){
+            width: ($width/100) * 100%;
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        max-width: calc(100% + 1);
+   }
+}
+
+.row.reverse{
+    flex-direction: row-reverse;
+}
+
+.stack{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.stack.reverse{
+    flex-direction: column-reverse;
+}
+
+.space-start{
+    justify-content: flex-start;
+}
+
+.space-start{
+    justify-content: flex-end;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.space-center{
+    justify-content: center;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.flex-right{
+    margin-left: auto;
+}
+
+.flex-left{
+    margin-right: auto;
+}
+
+.row-break{
+    flex-basis: 100%;
+    width: 0px; 
+    height: 0px; 
+    overflow: hidden;
+}
+
+@for $i from 1 through 12{
+    .row{
+        .offset-#{$i}{
+            margin-left: 100%/(12/$i);
+        }
+    }
+
+    .row.reverse{
+        .offset-#{$i}{
+            margin-right: 100%/(12/$i);
+        }
+    }
+
+    .stack{
+        .offset-#{$i}{
+            margin-top: 100%/(12/$i);
+        }
+    }
+
+    .stack.reverse{
+        .offset-#{$i}{
+            margin-bottom: 100%/(12/$i);
+        }
+    }
+
+    .flex-xl-#{$i}{
+        max-width: 100%/(12/$i);
+        flex-basis: 100%/(12/$i);
+    }
+    
+    .flex-lg-#{$i}{
+        max-width: 100%/(12/$i);
+        flex-basis: 100%/(12/$i);
+    }
+
+    .flex-md-#{$i}{
+        max-width: 100%/(12/$i);
+        flex-basis: 100%/(12/$i);
+    }
+
+    .flex-sm-#{$i}{
+        max-width: 100%/(12/$i);
+        flex-basis: 100%/(12/$i);
+    }
+}
+
+@media(max-width: $mobile){
+    @for $i from 1 through 12{
+        .flex-xl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-lg-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-md-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-sm-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+}
+
+@media(min-width: $mobile) and (max-width: $tablet){
+    @for $i from 1 through 12{
+        .flex-sm-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xxl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-lg-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-md-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+}
+
+@media(min-width: $tablet) and (max-width: $desktop){
+    @for $i from 1 through 12{
+        .flex-sm-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+
+    @for $i from 1 through 12{
+        .flex-md-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+
+    @for $i from 1 through 12{
+        .flex-xl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xxl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-lg-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+}
+
+@media(min-width: $desktop) and (max-width: $deskhd){
+    @for $i from 1 through 12{
+        .flex-sm-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-md-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-lg-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xxl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+}
+
+@media(min-width: $deskhd){
+    @for $i from 1 through 12{
+        .flex-sm-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-md-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-lg-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+    @for $i from 1 through 12{
+        .flex-xxl-#{$i}{
+            max-width: 100%/(12/$i);
+            flex-basis: 100%/(12/$i);
+        }
+    }
+}
+
+
+
+@each $padding in 5, 10, 15, 20, 25, 30, 35, 40, 45, 50{
+    .padding-#{$padding}{
+        padding: 0 #{$padding}px;
+    }
+
+    .padding-#{$padding}.gutter{
+        padding: 0 #{$padding/2}px;
+        margin: 0 #{$padding/2}px;
+    }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>rmn-collection demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../src/ramen-button.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+          ramen-button{
+              margin-top: 10px;
+          }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic Ramen Button demo</h3>
+      <demo-snippet>
+        <template>
+          <ramen-button class="primary">Button</ramen-button>
+          <ramen-button class="primary ghost">Button</ramen-button>
+          <ramen-button class="primary ghost" raised>Button</ramen-button>
+          <ramen-button class="primary" flat>Button</ramen-button>
+          <ramen-button class="primary" raised>Button</ramen-button>
+          <ramen-button class="primary" flat raised>Button</ramen-button>
+          <ramen-button class="info" flat raised>Info</ramen-button>
+          <ramen-button class="success" flat raised>Success</ramen-button>
+          <ramen-button class="warning" flat raised>Warning</ramen-button>
+          <ramen-button class="danger" flat raised>Danger</ramen-button>
+          <ramen-button class="light" flat raised>Light</ramen-button>
+          <ramen-button class="dark" flat raised>Dark</ramen-button>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

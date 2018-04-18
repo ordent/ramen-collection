@@ -1,0 +1,76 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-shared-styles.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<dom-module id="ramen-dialog">
+    <template>
+        <style include="paper-dialog-shared-styles">
+            /* <%= css %> /* END OF CSS */
+        </style>
+        <template is="dom-if" if=[[header]]>
+            <template is="dom-if" if=[[title]]>
+                <div class="dialog-header">
+                    <h1>[[title]]</h1>
+                    <div class="dialog-close-button-wrapper">
+                        <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <div class="dialog-content">
+            <paper-dialog-scrollable>
+                <template is="dom-if" if=[[!isHeader]]>
+                    <div class="dialog-header-inline-wrapper">
+                        <template is="dom-if" if=[[title]]>
+                            <h2 class="dialog-header-inline">[[title]]</h2>
+                            <div class="dialog-close-button-wrapper">
+                                <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                            </div>
+                        </template>
+                        <template is="dom-if" if=[[!isTitle]]>
+                            <div class="dialog-close-button-wrapper right-wrapper">
+                                <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                            </div>
+                        </template>
+
+                    </div>
+                </template>
+                <slot></slot>
+                <template is="dom-if" if=[[isHtml]]>
+                    <div class="dialog-content" inner-h-t-m-l="[[htmlVal]]"></div>
+                </template>
+                <template is="dom-if" if=[[!isHtml]]>
+                    <div class="dialog-content">
+                        <slot name="scrollable"></slot>
+                        <template is="dom-if" if="[[isList]]">
+                            <ul>
+                                <template is="dom-repeat" items="[[list]]" as="item">
+                                    <li>[[item]]</li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+            </paper-dialog-scrollable>
+        </div>
+        <div class="dialog-footer alignCenter">
+            <slot name="footer"></slot>
+            <template is="dom-if" if="[[onlyDismissal]]">
+                <paper-button class="dialog-footer-button dialog-dismiss-button" dialog-dismiss on-tap="_actionDismiss">[[dialogCancelText]]</paper-button>
+            </template>
+            <template is="dom-if" if="[[onlyConfirmation]]">
+                <paper-button class="dialog-footer-button dialog-confirm-button" dialog-confirm autofocus on-tap="_actionConfirm">[[dialogConfirmText]]</paper-button>
+            </template>
+            <template is="dom-if" if="[[bothDialogButton]]">
+                <paper-button class="dialog-footer-button both-dialog dialog-dismiss-button" dialog-dismiss on-tap="_actionDismiss">[[dialogCancelText]]</paper-button>
+                <paper-button class="dialog-footer-button both-dialog dialog-confirm-button" dialog-confirm autofocus on-tap="_actionConfirm">[[dialogConfirmText]]</paper-button>
+            </template>
+        </div>
+    </template>
+    <script>
+        /* <%= js %> /* END OF JS */
+    </script>
+</dom-module>

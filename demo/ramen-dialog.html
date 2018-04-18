@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>rmn-collection demo</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../src/ramen-dialog.html">
+    <link rel="import" href="../src/ramen-button.html">
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic Ramen Dialog demo</h3>
+      <demo-snippet>
+        <template>
+          <ramen-button onclick="dialog.open()" raised>Button</ramen-button>
+          <ramen-dialog id="dialog" class="small" >Dialog</ramen-dialog>
+          <ramen-button onclick="info.open()" class="info" title="Dialog Info" flat>Info</ramen-button>
+          <ramen-dialog id="info" class="primary" title="Dialog Info aja satupun yang anda masalaj." modal>Dialog</ramen-dialog>
+          <ramen-button onclick="success.open()" class="success" raised>Success</ramen-button>
+          <ramen-dialog id="success" class="success large">Dialog</ramen-dialog>
+          <ramen-button onclick="warning.open()" class="warning" raised flat>Warning</ramen-button>
+          <ramen-dialog id="warning" class="small warning" is-header title="Judul Dialog">Dialog</ramen-dialog>
+          <ramen-button onclick="danger.open()" class="danger" >Danger</ramen-button>
+          <ramen-dialog id="danger" class="danger" html-val="<h2>test</h2>" confirmation dismissal></ramen-dialog>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>

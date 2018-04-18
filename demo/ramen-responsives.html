@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>rmn-collection demo</title>
+
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../src/ramen-responsives.html">
+  <link rel="import" href="../bower_components/iron-component-page/iron-component-page.html">
+
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles ramen-responsives">
+      div{
+        text-align: center;
+      }
+      .row div{
+        height: 100px;
+        vertical-align: middle;
+      }
+    </style>
+  </custom-style>
+</head>
+
+<body>
+  <div class="vertical-section-container centered">
+    <h3>Basic Ramen Responsives demo</h3>
+    <h5>12 Columns</h5>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">1</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">2</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">3</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">4</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">5</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">6</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">7</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">8</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">9</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">10</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">11</div>
+          <div class="flex-sm-1 flex-md-2 flex-lg-3 flex-xl-4 flex-xxl-6">12</div>
+        </div>
+      </template>
+    </demo-snippet>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-2 flex-xxl-3">1</div>
+          <div class="flex-sm-2 flex-xxl-3">2</div>
+          <div class="flex-sm-2 flex-xxl-3">3</div>
+          <div class="flex-sm-2 flex-xxl-3">4</div>
+          <div class="flex-sm-2 flex-xxl-3">5</div>
+          <div class="flex-sm-2 flex-xxl-3">6</div>
+        </div>
+      </template>
+    </demo-snippet>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-3">1</div>
+          <div class="flex-sm-3">2</div>
+          <div class="flex-sm-3">3</div>
+          <div class="flex-sm-3">4</div>
+      </div>
+      </template>
+    </demo-snippet>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-4">1</div>
+          <div class="flex-sm-4">2</div>
+          <div class="flex-sm-4">3</div>
+        </div>
+      </template>
+    </demo-snippet>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-6">1</div>
+          <div class="flex-sm-6">2</div>
+        </div>
+      </template>
+    </demo-snippet>
+    <demo-snippet>
+      <template>
+        <div class="row">
+          <div class="flex-sm-12">1</div>
+        </div>
+      </template>
+    </demo-snippet>
+    <!-- <iron-component-page></iron-component-page> -->
+  </div>
+</body>
+
+</html>

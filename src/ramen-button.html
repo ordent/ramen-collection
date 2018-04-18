@@ -1,0 +1,96 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-styles/element-styles/paper-material-styles.html">
+<link rel="import" href="../bower_components/paper-behaviors/paper-button-behavior.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<dom-module id="ramen-button">
+    <template strip-whitespace>
+        <style include="paper-material-styles">
+            /* /*! CSS START */:host{@apply --layout-inline;@apply --layout-center-center;position:relative;box-sizing:border-box;min-width:5.14em;margin:0 0.29em;background:transparent;-webkit-tap-highlight-color:transparent;-webkit-tap-highlight-color:transparent;font:inherit;text-transform:uppercase;outline-width:0;border-radius:3px;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;user-select:none;cursor:pointer;z-index:0;padding:0.7em 0.57em;@apply --paper-font-common-base;@apply --paper-button;--primary-background: #706FAE;--primary-background-hover: #9090c0;--primary-color: #EEE;--inverse-background: #EEE;--inverse-background-hover: #d5d5d5;--inverse-color: #333;--success-background: #43A047;--success-background-hover: #5bbb60;--success-color: #EEE;--warning-background: #FDD835;--warning-background-hover: #fee268;--warning-color: #333;--danger-background: #E53935;--danger-background-hover:#eb6562;--danger-color: #EEE;--info-background: #1E88E5;--info-background-hover: #4ca0ea;--info-color: #EEE;--light-background: #EEE;--light-background-hover: #d5d5d5;--light-color: #333;--dark-background: #607D8B;--dark-background-hover: #7b96a3;--dark-color: #EEE;--ghost-background: #EEE;--ghost-background-hover: #d5d5d5;--ghost-color: #333;--ghost-border: 1px #607D8B solid}:host([elevation="1"]){@apply --paper-material-elevation-1}:host([elevation="2"]){@apply --paper-material-elevation-2}:host([elevation="3"]){@apply --paper-material-elevation-3}:host([elevation="4"]){@apply --paper-material-elevation-4}:host([elevation="5"]){@apply --paper-material-elevation-5}:host([hidden]){display:none !important}:host([raised].keyboard-focus){font-weight:bold;@apply --paper-button-raised-keyboard-focus}:host(:not([raised]).keyboard-focus){font-weight:bold;@apply --paper-button-flat-keyboard-focus}:host([disabled]){background:#eaeaea;color:#a8a8a8;cursor:auto;pointer-events:none;@apply --paper-button-disabled}:host([animated]){@apply --shadow-transition}paper-ripple{color:var(--paper-button-ink-color)}paper-button[disabled]{background:lightgray;color:white}:host(.primary){color:var(--primary-background);@apply --custom-button-properties}:host(.primary[flat]){background:var(--primary-background);color:var(--primary-color);@apply --custom-button-properties}:host(.primary.ghost){background:var(--primary-color);color:var(--primary-background);border:1px var(--primary-background) solid;@apply --custom-button-properties-ghost}:host(.primary.ghost:hover){background:var(--primary-color);color:var(--primary-background);@apply --custom-button-properties-ghost-hover}:host(.primary)[active]{background:var(--primary-background-active);@apply --custom-button-properties-active}:host(.inverse){color:var(--inverse-background);@apply --custom-button-properties}:host(.inverse[flat]){background:var(--inverse-background);color:var(--inverse-color);@apply --custom-button-properties}:host(.inverse.ghost){background:var(--inverse-color);color:var(--inverse-background);border:1px var(--inverse-background) solid;@apply --custom-button-properties-ghost}:host(.inverse.ghost:hover){background:var(--inverse-color);color:var(--inverse-background);@apply --custom-button-properties-ghost-hover}:host(.inverse)[active]{background:var(--inverse-background-active);@apply --custom-button-properties-active}:host(.success){color:var(--success-background);@apply --custom-button-properties}:host(.success[flat]){background:var(--success-background);color:var(--success-color);@apply --custom-button-properties}:host(.success.ghost){background:var(--success-color);color:var(--success-background);border:1px var(--success-background) solid;@apply --custom-button-properties-ghost}:host(.success.ghost:hover){background:var(--success-color);color:var(--success-background);@apply --custom-button-properties-ghost-hover}:host(.success)[active]{background:var(--success-background-active);@apply --custom-button-properties-active}:host(.warning){color:var(--warning-background);@apply --custom-button-properties}:host(.warning[flat]){background:var(--warning-background);color:var(--warning-color);@apply --custom-button-properties}:host(.warning.ghost){background:var(--warning-color);color:var(--warning-background);border:1px var(--warning-background) solid;@apply --custom-button-properties-ghost}:host(.warning.ghost:hover){background:var(--warning-color);color:var(--warning-background);@apply --custom-button-properties-ghost-hover}:host(.warning)[active]{background:var(--warning-background-active);@apply --custom-button-properties-active}:host(.danger){color:var(--danger-background);@apply --custom-button-properties}:host(.danger[flat]){background:var(--danger-background);color:var(--danger-color);@apply --custom-button-properties}:host(.danger.ghost){background:var(--danger-color);color:var(--danger-background);border:1px var(--danger-background) solid;@apply --custom-button-properties-ghost}:host(.danger.ghost:hover){background:var(--danger-color);color:var(--danger-background);@apply --custom-button-properties-ghost-hover}:host(.danger)[active]{background:var(--danger-background-active);@apply --custom-button-properties-active}:host(.info){color:var(--info-background);@apply --custom-button-properties}:host(.info[flat]){background:var(--info-background);color:var(--info-color);@apply --custom-button-properties}:host(.info.ghost){background:var(--info-color);color:var(--info-background);border:1px var(--info-background) solid;@apply --custom-button-properties-ghost}:host(.info.ghost:hover){background:var(--info-color);color:var(--info-background);@apply --custom-button-properties-ghost-hover}:host(.info)[active]{background:var(--info-background-active);@apply --custom-button-properties-active}:host(.light){color:var(--light-background);@apply --custom-button-properties}:host(.light[flat]){background:var(--light-background);color:var(--light-color);@apply --custom-button-properties}:host(.light.ghost){background:var(--light-color);color:var(--light-background);border:1px var(--light-background) solid;@apply --custom-button-properties-ghost}:host(.light.ghost:hover){background:var(--light-color);color:var(--light-background);@apply --custom-button-properties-ghost-hover}:host(.light)[active]{background:var(--light-background-active);@apply --custom-button-properties-active}:host(.dark){color:var(--dark-background);@apply --custom-button-properties}:host(.dark[flat]){background:var(--dark-background);color:var(--dark-color);@apply --custom-button-properties}:host(.dark.ghost){background:var(--dark-color);color:var(--dark-background);border:1px var(--dark-background) solid;@apply --custom-button-properties-ghost}:host(.dark.ghost:hover){background:var(--dark-color);color:var(--dark-background);@apply --custom-button-properties-ghost-hover}:host(.dark)[active]{background:var(--dark-background-active);@apply --custom-button-properties-active}
+ /* END OF CSS */
+        </style>
+        <slot>Button</slot>
+    </template>
+
+    <script>
+        /* /**
+ *  # Ramen Button
+ * `ramen-button` add a paper-button with styled opinion that mimic the coloring of bootstrap button.
+ * @summary a paper button with bootstrap color style.
+ * @customElement
+ * @polymer
+ * @demo ../demo/ramen-button.html
+ * @extends {Polymer.Element}
+ */
+class RamenButton extends Polymer.mixinBehaviors([Polymer.PaperButtonBehavior], Polymer.Element) {
+    /**
+     * String providing the tag name to register the element under.
+     */
+    static get is() {
+        return 'ramen-button';
+    }
+
+    /**
+     * Object describing property-related metadata used by Polymer features
+     */
+    static get properties() {
+        return {
+            /**
+             * attributes that toogle the behaviour of raised button.
+             *
+             * @type Boolean
+             */
+            raised: {
+                type: Boolean,
+                reflectToAttribute: true,
+                value: false,
+                observer: '_calculateElevation'
+            },
+            /**
+             * attributes that toogle the behaviour of flat button.
+             *
+             * @type Boolean
+             */
+            flat : Boolean,
+        };
+    }
+
+    /**
+     * Instance of the element is created/upgraded. Use: initializing state,
+     * set up event listeners, create shadow dom.
+     * @constructor
+     */
+    constructor() {
+        super();
+    }
+
+    /**
+     * Use for one-time configuration of your component after local DOM is initialized. 
+     */
+    ready() {
+        super.ready();
+
+        Polymer.RenderStatus.afterNextRender(this, function () {
+
+        });
+    }
+
+    _calculateElevation() {
+        if (!this.raised) {
+          this._setElevation(0);
+        } else {
+          Polymer.PaperButtonBehaviorImpl._calculateElevation.apply(this);
+        }
+      }
+      /**
+      Fired when the animation finishes.
+      This is useful if you want to wait until
+      the ripple animation finishes to perform some action.
+      @event transitionend
+      Event param: {{node: Object}} detail Contains the animated node.
+      */
+
+}
+
+window.customElements.define(RamenButton.is, RamenButton); /* END OF JS */
+    </script>
+</dom-module>

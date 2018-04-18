@@ -1,0 +1,308 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+<link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-shared-styles.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<dom-module id="ramen-dialog">
+    <template>
+        <style include="paper-dialog-shared-styles">
+            /* /*! CSS START */:host{--primary-background: #706FAE;--primary-background-hover: #9090c0;--primary-color: #EEE;--inverse-background: #EEE;--inverse-background-hover: #d5d5d5;--inverse-color: #333;--success-background: #43A047;--success-background-hover: #5bbb60;--success-color: #EEE;--warning-background: #FDD835;--warning-background-hover: #fee268;--warning-color: #333;--danger-background: #E53935;--danger-background-hover:#eb6562;--danger-color: #EEE;--info-background: #1E88E5;--info-background-hover: #4ca0ea;--info-color: #EEE;--light-background: #EEE;--light-background-hover: #d5d5d5;--light-color: #333;--dark-background: #607D8B;--dark-background-hover: #7b96a3;--dark-color: #EEE;--ghost-background: #EEE;--ghost-background-hover: #d5d5d5;--ghost-color:  #333;--ghost-border: 1px #607D8B solid}:host{border-radius:3px;min-width:50%;min-height:200px}@media (max-width: 425px){:host{min-width:90%;max-width:95%}}.right-wrapper{margin-left:auto}:host(.small){min-width:25%;max-width:25%}@media (max-width: 425px){:host(.small){min-width:90%;max-width:95%}}:host(.large){min-width:75%;max-width:75%}@media (max-width: 425px){:host(.large){min-width:90%;max-width:95%}}paper-dialog-scrollable{min-height:200px}@media (max-width: 425px){paper-dialog-scrollable{min-height:350px}}:host(.primary) .dialog-title{background:var(--primary-background);color:var(--primary-color)}:host(.info) .dialog-title{background:var(--info-background);color:var(--info-color)}:host(.success) .dialog-title{background:var(--success-background);color:var(--success-color)}:host(.warning) .dialog-title{background:var(--warning-background);color:var(--warning-color)}:host(.danger) .dialog-title{background:var(--danger-background);color:var(--danger-color)}:host(.light) .dialog-title{background:var(--light-background);color:var(--light-color)}:host(.dark) .dialog-title{background:var(--dark-background);color:var(--dark-color)}paper-icon-button iron-icon{width:48px}.dialog-content{padding:20px 10px}.dialog-close-button-wrapper{display:flex;flex-direction:column;justify-content:center}.dialog-header-inline-wrapper{display:flex;justify-content:space-between}.dialog-header{background:var(--primary-background);color:var(--primary-color);justify-content:space-between;margin-top:0;text-align:center;padding:10px 20px;display:flex;border-radius:3px 3px 0 0}.dialog-header h1,.dialog-header h2,.dialog-header h3,.dialog-header h4,.dialog-header h5,.dialog-header h6{margin:0;height:2em;line-height:2em;vertical-align:middle}.dialog-footer-button{border-radius:0;margin:0}:host(.primary) .dialog-header{background:var(--primary-background);color:var(--primary-color)}:host(.primary) ramen-button.primary{--primary-background: var(--primary-background);--primary-color: var(--primary-color)}:host(.primary) .dialog-header-inline{border-left:10px var(--primary-background) solid;padding-left:10px}:host(.primary) .dialog-confirm-button{color:var(--primary-background);font-weight:700}:host(.primary) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.primary) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--primary-background);color:var(--primary-background)}:host(.primary) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--primary-background);color:white}:host(.info) .dialog-header{background:var(--info-background);color:var(--info-color)}:host(.info) ramen-button.primary{--primary-background: var(--info-background);--primary-color: var(--info-color)}:host(.info) .dialog-header-inline{border-left:10px var(--info-background) solid;padding-left:10px}:host(.info) .dialog-confirm-button{color:var(--info-background);font-weight:700}:host(.info) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.info) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--info-background);color:var(--info-background)}:host(.info) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--info-background);color:white}:host(.success) .dialog-header{background:var(--success-background);color:var(--success-color)}:host(.success) ramen-button.primary{--primary-background: var(--success-background);--primary-color: var(--success-color)}:host(.success) .dialog-header-inline{border-left:10px var(--success-background) solid;padding-left:10px}:host(.success) .dialog-confirm-button{color:var(--success-background);font-weight:700}:host(.success) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.success) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--success-background);color:var(--success-background)}:host(.success) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--success-background);color:white}:host(.warning) .dialog-header{background:var(--warning-background);color:var(--warning-color)}:host(.warning) ramen-button.primary{--primary-background: var(--warning-background);--primary-color: var(--warning-color)}:host(.warning) .dialog-header-inline{border-left:10px var(--warning-background) solid;padding-left:10px}:host(.warning) .dialog-confirm-button{color:var(--warning-background);font-weight:700}:host(.warning) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.warning) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--warning-background);color:var(--warning-background)}:host(.warning) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--warning-background);color:white}:host(.danger) .dialog-header{background:var(--danger-background);color:var(--danger-color)}:host(.danger) ramen-button.primary{--primary-background: var(--danger-background);--primary-color: var(--danger-color)}:host(.danger) .dialog-header-inline{border-left:10px var(--danger-background) solid;padding-left:10px}:host(.danger) .dialog-confirm-button{color:var(--danger-background);font-weight:700}:host(.danger) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.danger) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--danger-background);color:var(--danger-background)}:host(.danger) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--danger-background);color:white}:host(.light) .dialog-header{background:var(--light-background);color:var(--light-color)}:host(.light) ramen-button.primary{--primary-background: var(--light-background);--primary-color: var(--light-color)}:host(.light) .dialog-header-inline{border-left:10px var(--light-background) solid;padding-left:10px}:host(.light) .dialog-confirm-button{color:var(--light-background);font-weight:700}:host(.light) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.light) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--light-background);color:var(--light-background)}:host(.light) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--light-background);color:white}:host(.dark) .dialog-header{background:var(--dark-background);color:var(--dark-color)}:host(.dark) ramen-button.primary{--primary-background: var(--dark-background);--primary-color: var(--dark-color)}:host(.dark) .dialog-header-inline{border-left:10px var(--dark-background) solid;padding-left:10px}:host(.dark) .dialog-confirm-button{color:var(--dark-background);font-weight:700}:host(.dark) .dialog-dismiss-button{background:#FFFFFF;color:var(--dark-text-color)}:host(.dark) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button{border:1px solid var(--dark-background);color:var(--dark-background)}:host(.dark) .dialog-header-inline-wrapper .dialog-close-button-wrapper paper-icon-button:hover{background:var(--dark-background);color:white}.dialog-confirm-button,.dialog-dismiss-button{border-radius:0 0 3px 3px}.dialog-confirm-button.both-dialog{border-radius:0 0 3px 0}.dialog-dismiss-button.both-dialog{border-right:1px #d5d6e6 solid;border-radius:0 0 0 3px}.dialog-dismiss-button.both-dialog:hover,.dialog-confirm-button.both-dialog:hover{background:#f5f5f9}.dialog-footer{display:flex;justify-content:space-between;margin:0;border-top:1px #d5d6e6 solid}.dialog-footer paper-button{font-size:1.2em}.dialog-footer .dialog-confirm-button{flex:2}.dialog-footer .dialog-dismiss-button{flex:1;text-transform:capitalize}:host{transition:0.3s ease-in-out all;opacity:1}:host(.hidden){transition:0.3s ease-in-out all;opacity:0}
+ /* END OF CSS */
+        </style>
+        <template is="dom-if" if=[[header]]>
+            <template is="dom-if" if=[[title]]>
+                <div class="dialog-header">
+                    <h1>[[title]]</h1>
+                    <div class="dialog-close-button-wrapper">
+                        <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <div class="dialog-content">
+            <paper-dialog-scrollable>
+                <template is="dom-if" if=[[!isHeader]]>
+                    <div class="dialog-header-inline-wrapper">
+                        <template is="dom-if" if=[[title]]>
+                            <h2 class="dialog-header-inline">[[title]]</h2>
+                            <div class="dialog-close-button-wrapper">
+                                <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                            </div>
+                        </template>
+                        <template is="dom-if" if=[[!isTitle]]>
+                            <div class="dialog-close-button-wrapper right-wrapper">
+                                <paper-icon-button icon="icons:close" class="dialog-close-button" dialog-dismiss></paper-icon-button>
+                            </div>
+                        </template>
+
+                    </div>
+                </template>
+                <slot></slot>
+                <template is="dom-if" if=[[isHtml]]>
+                    <div class="dialog-content" inner-h-t-m-l="[[htmlVal]]"></div>
+                </template>
+                <template is="dom-if" if=[[!isHtml]]>
+                    <div class="dialog-content">
+                        <slot name="scrollable"></slot>
+                        <template is="dom-if" if="[[isList]]">
+                            <ul>
+                                <template is="dom-repeat" items="[[list]]" as="item">
+                                    <li>[[item]]</li>
+                                </template>
+                            </ul>
+                        </template>
+                    </div>
+                </template>
+            </paper-dialog-scrollable>
+        </div>
+        <div class="dialog-footer alignCenter">
+            <slot name="footer"></slot>
+            <template is="dom-if" if="[[onlyDismissal]]">
+                <paper-button class="dialog-footer-button dialog-dismiss-button" dialog-dismiss on-tap="_actionDismiss">[[dialogCancelText]]</paper-button>
+            </template>
+            <template is="dom-if" if="[[onlyConfirmation]]">
+                <paper-button class="dialog-footer-button dialog-confirm-button" dialog-confirm autofocus on-tap="_actionConfirm">[[dialogConfirmText]]</paper-button>
+            </template>
+            <template is="dom-if" if="[[bothDialogButton]]">
+                <paper-button class="dialog-footer-button both-dialog dialog-dismiss-button" dialog-dismiss on-tap="_actionDismiss">[[dialogCancelText]]</paper-button>
+                <paper-button class="dialog-footer-button both-dialog dialog-confirm-button" dialog-confirm autofocus on-tap="_actionConfirm">[[dialogConfirmText]]</paper-button>
+            </template>
+        </div>
+    </template>
+    <script>
+        /* /**
+ *  # Ramen Dialog
+ * `ramen-dialog` add a paper-dialog with styled opinion that mimic the coloring of bootstrap dialog. HTML value and list is also available via API.
+ * @summary a paper dialog with ramen color style.
+ * @customElement
+ * @polymer
+ * @demo ../demo/ramen-dialog.html
+ * @extends {Polymer.Element}
+ */
+class RamenDialog extends Polymer.mixinBehaviors([Polymer.PaperDialogBehavior], Polymer.Element) {
+    static get is() {
+        return 'ramen-dialog';
+    }
+    
+    static get properties() {
+        return {
+            /**
+             * title of dialog
+             * @type String
+             */
+            title: {
+                type: String,
+                value: null
+            },
+            /**
+             * indicator if title is exist
+             * @type Boolean
+             */
+            isTitle: {
+                type : Boolean,
+                readOnly: true,
+                computed : '_computeTitle(title)'
+            },
+            /**
+             * attributes that activate header style of dialog
+             * @type Boolean
+             */
+            header : {
+                type: Boolean,
+                value: false
+            },
+            /**
+             * list based content for the paper dialog
+             * @type Array
+             */
+            list: {
+                type: Array,
+                value: function(){
+                    return [];
+                }
+            },
+            /**
+             * attributes to activate dismissal button
+             * @type Button
+             */
+            dismissal: {
+                type: Boolean,
+                value: false
+            },
+            /**
+             * text of cancel button dialog
+             * @type String
+             */
+            dialogCancelText : {
+                type : String,
+                value : "Cancel"
+            },
+            /**
+             * attributes to activate confirmation button
+             * @type Button
+             */
+            confirmation: {
+                type: Boolean,
+                value: false
+            },
+            /**
+             * text of confirmation button dialog
+             * @type String
+             */
+            dialogConfirmText : {
+                type : String,
+                value : "Ok"
+            },
+            /**
+             * indicator if list based content is exist
+             * @type String
+             */
+            isList : {
+                type: Boolean,
+                readOnly: true,
+                computed: '_computedList(list)'
+            },
+            /**
+             * attributes of html based dialog content
+             * @type String
+             */
+            htmlVal : {
+                type: String,
+                value: undefined
+            },
+            /**
+             * indicator if html based content is exist
+             * @type Boolean
+             */
+            isHtml : {
+                type: Boolean,
+                readOnly: true,
+                computed: '_computedHtml(htmlVal)'
+            },
+            /**
+             * indicator if only dismissal button is active
+             * @type String
+             */
+            onlyDismissal : {
+                type: Boolean,
+                readOnly: true,
+                computed: '_computeOnlyDismissal(dismissal, confirmation)'
+            },
+            /**
+             * indicator if only c
+             * @type String
+             */
+            
+            onlyConfirmation : {
+                type: Boolean,
+                readOnly: true,
+                computed: '_computeOnlyConfirmation(dismissal, confirmation)'
+            },
+            /**
+             * indicator if list based content is exist
+             * @type String
+             */
+            
+            bothDialogButton : {
+                type: Boolean,
+                readOnly: true,
+                computed: '_computeBothDialog(dismissal, confirmation)'
+            },
+        };
+    }
+    
+    constructor() {
+        super();
+    }
+    
+    ready() {
+        super.ready();
+        Polymer.RenderStatus.afterNextRender(this, function () {
+            this.addEventListener('iron-overlay-canceled', this._dialogCanceled);
+            this.addEventListener('iron-overlay-closed', this._dialogClosed);
+        });
+    }
+    disconnectedCallback(){
+        this.removeEventListener('iron-overlay-canceled', this._dialogCanceled);
+        this.addEventListener('iron-overlay-closed', this._dialogClosed);
+        super.disconnectedCallback();
+    }
+    _computeTitle(val){
+        if(val == null){
+            return false;
+        }
+        return true;
+    }
+    _computeOnlyDismissal(a, b){
+        if(a && !b){
+            return true;
+        }
+        return false;
+    }
+    _computeOnlyConfirmation(a, b){
+        if(!a && b){
+            return true;
+        }
+        return false;
+    }
+    _computeBothDialog(a, b){
+        if(a && b){
+            return true;
+        }
+        return false;
+    }
+    _computedHtml(htmlVal){
+        if(htmlVal){
+            return true;
+        }
+        return false;
+    }
+    _actionDismiss(){
+        this.dispatchEvent(new CustomEvent("dialog-dismiss"));
+    }
+    _actionConfirm(){
+        this.dispatchEvent(new CustomEvent("dialog-confirm"));
+    }
+    /**
+     * Use open to trigger the open process of dialog
+     */
+    open(){
+        super.open();
+        this.classList.add('hidden');
+        window.setTimeout(function(){
+            this.classList.remove('hidden');
+        }.bind(this), 10);
+    }
+    /**
+     * Use close to trigger the closing process of dialog
+     */
+    close(){
+        this.set('listContent', []);
+        this.htmlVal = undefined;
+        this.classList.add('hidden');
+        window.setTimeout(super.close.bind(this), 300);
+    }
+    /**
+     * Open With Data allow you to trigger the open process injected with data to make it easier for you to dinamically change the Content.
+     */
+    openWithData(data){
+        for (const key in data) {
+            if (data.hasOwnProperty(key)) {
+                this[key] = data[key];
+            }
+        }
+        super.open();
+    }
+    _dialogCanceled(e){
+        e.preventDefault();
+        this.close();
+    }
+    _dialogClosed(){
+        this.classList.remove('hidden');
+    }
+}
+window.customElements.define(RamenDialog.is, RamenDialog); /* END OF JS */
+    </script>
+</dom-module>

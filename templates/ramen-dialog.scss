@@ -1,0 +1,200 @@
+/*! CSS START */
+@import '../styles/variables';
+// background = fill color
+// color = text color
+:host{
+    --primary-background : #{$primary-color};
+    --primary-background-hover : #{lighten($primary-color, 10%)};
+    --primary-color : #{$light-text-color};
+    
+    --inverse-background : #{$light-color};
+    --inverse-background-hover : #{darken($light-color, 10%)};
+    --inverse-color: #{$dark-text-color};
+
+    --success-background : #{$success-color};
+    --success-background-hover : #{lighten($success-color, 10%)};
+    --success-color : #{$light-text-color};
+
+    --warning-background : #{$warning-color};
+    --warning-background-hover : #{lighten($warning-color, 10%)};
+    --warning-color : #{$dark-text-color};
+
+    --danger-background : #{$danger-color};
+    --danger-background-hover :#{lighten($danger-color, 10%)};
+    --danger-color : #{$light-text-color};
+
+    --info-background : #{$info-color};
+    --info-background-hover : #{lighten($info-color, 10%)};
+    --info-color : #{$light-text-color};
+
+    --light-background : #{$light-color};
+    --light-background-hover : #{darken($light-color, 10%)};
+    --light-color : #{$dark-text-color};
+
+    --dark-background : #{$dark-color};
+    --dark-background-hover : #{lighten($dark-color, 10%)};
+    --dark-color : #{$light-text-color};
+
+    --ghost-background : #{$light-color};
+    --ghost-background-hover : #{darken($light-color, 10%)};
+    --ghost-color :  #{$dark-text-color};
+    --ghost-border: 1px #{$dark-color} solid;
+}
+:host{
+    border-radius: $border-radius;
+    min-width: 50%;
+    min-height: 200px;
+    @media(max-width:$mobile){
+        min-width: 90%;
+        max-width: 95%;
+    }
+}
+.right-wrapper{
+    margin-left: auto;
+}
+:host(.small){
+    min-width: 25%;
+    max-width: 25%;
+    @media(max-width:$mobile){
+        min-width: 90%;
+        max-width: 95%;
+    }
+}
+
+:host(.large){
+    min-width: 75%;
+    max-width: 75%;
+    @media(max-width:$mobile){
+        min-width: 90%;
+        max-width: 95%;
+    }
+}
+paper-dialog-scrollable{
+    min-height: 200px;
+    @media(max-width:$mobile){
+        min-height: 350px;
+    }
+}
+@each $color in primary,info,success,warning,danger,light,dark{
+    :host(.#{$color}) .dialog-title{
+        background: var(--#{$color}-background);
+        color: var(--#{$color}-color);
+    }
+}
+paper-icon-button iron-icon{
+    width: 48px;
+}
+
+.dialog-content{
+    padding: 20px 10px;
+}
+
+.dialog-close-button-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dialog-header-inline-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog-header{
+    background: var(--primary-background);
+    color: var(--primary-color);
+    justify-content: space-between;
+    margin-top: 0;
+    text-align: center;
+    padding: 10px 20px;
+    display: flex;
+    border-radius: $border-radius $border-radius 0 0;
+    h1,h2,h3,h4,h5,h6{
+        margin: 0;
+        height: 2em;
+        line-height: 2em;
+        vertical-align: middle;
+    }
+}
+.dialog-footer-button{
+    border-radius: 0;
+    margin: 0;
+}
+@each $color in primary,info,success,warning,danger,light,dark{
+    :host(.#{$color}){
+        .dialog-header{
+            background: var(--#{$color}-background);
+            color: var(--#{$color}-color);
+        }
+        ramen-button.primary{
+            --primary-background : var(--#{$color}-background);
+            --primary-color : var(--#{$color}-color);
+        }
+        .dialog-header-inline{
+            border-left: 10px var(--#{$color}-background) solid;
+            padding-left: 10px;
+        }
+        .dialog-confirm-button{
+            color: var(--#{$color}-background);
+            font-weight: 700;
+        }
+        
+        .dialog-dismiss-button{
+            background: #FFFFFF;
+            color: var(--dark-text-color);
+        }
+        .dialog-header-inline-wrapper{
+            .dialog-close-button-wrapper{
+                paper-icon-button{
+                    border: 1px solid var(--#{$color}-background);
+                    color: var(--#{$color}-background);
+                }
+                paper-icon-button:hover{
+                    background: var(--#{$color}-background);
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+
+.dialog-confirm-button, .dialog-dismiss-button{
+    border-radius: 0 0 $border-radius $border-radius;
+}
+.dialog-confirm-button.both-dialog{
+    border-radius: 0 0 $border-radius 0;
+}
+.dialog-dismiss-button.both-dialog{
+    border-right: 1px lighten($accent-color, 10%) solid;
+    border-radius: 0 0 0 $border-radius;
+}
+.dialog-dismiss-button.both-dialog:hover, .dialog-confirm-button.both-dialog:hover{
+    background: lighten($accent-color, 20%);
+}
+.dialog-footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    border-top: 1px lighten($accent-color, 10%) solid;
+    paper-button{
+        font-size: 1.2em;
+        
+    }
+    .dialog-confirm-button{
+        flex: 2;
+    }
+    .dialog-dismiss-button{
+        flex: 1;
+        text-transform: capitalize;
+    }
+}
+// Animation
+:host{
+    transition: 0.3s ease-in-out all;
+    opacity: 1;
+}
+:host(.hidden){
+    transition: 0.3s ease-in-out all;
+    opacity: 0;
+}
