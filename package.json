@@ -35,6 +35,7 @@
     "watch": "browser-sync start --proxy 127.0.0.1:8081 --files 'src/**/*.html, src/**/*.js, images/*' --online false --open 'false'"
   },
   "dependencies": {
-    "babel-core": "^6.26.0"
+    "babel-core": "^6.26.0",
+    "gulp-replace": "^0.6.1"
   }
 }
