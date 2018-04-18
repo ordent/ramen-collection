@@ -4,7 +4,7 @@
     {
       "description": "/**\n # Ramen Button\n`ramen-button` add a paper-button with styled opinion that mimic the coloring of bootstrap button.",
       "summary": "a paper button with bootstrap color style.",
-      "path": "src/ramen-button.html",
+      "path": "dist/ramen-button.html",
       "properties": [
         {
           "name": "raised",
@@ -156,7 +156,7 @@
           "description": "",
           "name": "",
           "range": {
-            "file": "src/ramen-button.html",
+            "file": "dist/ramen-button.html",
             "start": {
               "line": 10,
               "column": 8
@@ -173,7 +173,7 @@
     {
       "description": "`ramen-datatable` Description",
       "summary": "ShortDescription.",
-      "path": "src/ramen-datatable.html",
+      "path": "dist/ramen-datatable.html",
       "properties": [],
       "methods": [
         {
@@ -222,7 +222,7 @@
     {
       "description": "/**\n # Ramen Dialog\n`ramen-dialog` add a paper-dialog with styled opinion that mimic the coloring of bootstrap dialog. HTML value and list is also available via API.",
       "summary": "a paper dialog with ramen color style.",
-      "path": "src/ramen-dialog.html",
+      "path": "dist/ramen-dialog.html",
       "properties": [
         {
           "name": "title",
@@ -546,7 +546,7 @@
           "params": []
         },
         {
-          "name": "_computeTitle",
+          "name": "_computedList",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
@@ -555,7 +555,28 @@
               "column": 4
             },
             "end": {
-              "line": 236,
+              "line": 238,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "list"
+            }
+          ]
+        },
+        {
+          "name": "_computeTitle",
+          "description": "",
+          "privacy": "protected",
+          "sourceRange": {
+            "start": {
+              "line": 239,
+              "column": 4
+            },
+            "end": {
+              "line": 244,
               "column": 5
             }
           },
@@ -572,11 +593,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 237,
+              "line": 245,
               "column": 4
             },
             "end": {
-              "line": 242,
+              "line": 250,
               "column": 5
             }
           },
@@ -596,11 +617,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 243,
+              "line": 251,
               "column": 4
             },
             "end": {
-              "line": 248,
+              "line": 256,
               "column": 5
             }
           },
@@ -620,11 +641,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 249,
+              "line": 257,
               "column": 4
             },
             "end": {
-              "line": 254,
+              "line": 262,
               "column": 5
             }
           },
@@ -644,11 +665,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 255,
+              "line": 263,
               "column": 4
             },
             "end": {
-              "line": 260,
+              "line": 268,
               "column": 5
             }
           },
@@ -665,11 +686,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 261,
+              "line": 269,
               "column": 4
             },
             "end": {
-              "line": 263,
+              "line": 271,
               "column": 5
             }
           },
@@ -682,11 +703,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 264,
+              "line": 272,
               "column": 4
             },
             "end": {
-              "line": 266,
+              "line": 274,
               "column": 5
             }
           },
@@ -699,11 +720,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 270,
+              "line": 278,
               "column": 4
             },
             "end": {
-              "line": 276,
+              "line": 284,
               "column": 5
             }
           },
@@ -716,11 +737,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 280,
+              "line": 288,
               "column": 4
             },
             "end": {
-              "line": 285,
+              "line": 293,
               "column": 5
             }
           },
@@ -733,11 +754,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 289,
+              "line": 297,
               "column": 4
             },
             "end": {
-              "line": 296,
+              "line": 304,
               "column": 5
             }
           },
@@ -754,11 +775,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 297,
+              "line": 305,
               "column": 4
             },
             "end": {
-              "line": 300,
+              "line": 308,
               "column": 5
             }
           },
@@ -775,11 +796,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 301,
+              "line": 309,
               "column": 4
             },
             "end": {
-              "line": 303,
+              "line": 311,
               "column": 5
             }
           },
@@ -801,7 +822,7 @@
           "column": 0
         },
         "end": {
-          "line": 304,
+          "line": 312,
           "column": 1
         }
       },
@@ -1044,7 +1065,7 @@
           "description": "",
           "name": "",
           "range": {
-            "file": "src/ramen-dialog.html",
+            "file": "dist/ramen-dialog.html",
             "start": {
               "line": 41,
               "column": 16
@@ -1059,7 +1080,7 @@
           "description": "",
           "name": "footer",
           "range": {
-            "file": "src/ramen-dialog.html",
+            "file": "dist/ramen-dialog.html",
             "start": {
               "line": 60,
               "column": 12
@@ -1076,7 +1097,7 @@
     {
       "description": "/**\n`ramen-page-renderer` Description",
       "summary": "ShortDescription.",
-      "path": "src/ramen-page-renderer.html",
+      "path": "dist/ramen-page-renderer.html",
       "properties": [],
       "methods": [],
       "staticMethods": [],
@@ -1106,7 +1127,7 @@
     {
       "description": "",
       "summary": "",
-      "path": "src/ramen-page-renderer.html",
+      "path": "dist/ramen-page-renderer.html",
       "properties": [
         {
           "name": "__dataClientsReady",
@@ -1686,15 +1707,15 @@
         {
           "name": "inject",
           "type": "Object",
-          "description": "},",
+          "description": "",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 43,
+              "line": 33,
               "column": 12
             },
             "end": {
-              "line": 49,
+              "line": 39,
               "column": 13
             }
           },
@@ -1711,11 +1732,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 50,
+              "line": 40,
               "column": 12
             },
             "end": {
-              "line": 54,
+              "line": 44,
               "column": 13
             }
           },
@@ -1973,11 +1994,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 92,
+              "line": 82,
               "column": 4
             },
             "end": {
-              "line": 98,
+              "line": 88,
               "column": 5
             }
           },
@@ -3894,11 +3915,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 58,
+              "line": 48,
               "column": 4
             },
             "end": {
-              "line": 68,
+              "line": 58,
               "column": 5
             }
           },
@@ -3918,11 +3939,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 70,
+              "line": 60,
               "column": 4
             },
             "end": {
-              "line": 78,
+              "line": 68,
               "column": 5
             }
           },
@@ -4877,7 +4898,7 @@
           "column": 0
         },
         "end": {
-          "line": 100,
+          "line": 90,
           "column": 1
         }
       },
@@ -4887,14 +4908,14 @@
       "attributes": [
         {
           "name": "inject",
-          "description": "},",
+          "description": "",
           "sourceRange": {
             "start": {
-              "line": 43,
+              "line": 33,
               "column": 12
             },
             "end": {
-              "line": 49,
+              "line": 39,
               "column": 13
             }
           },
@@ -4906,11 +4927,11 @@
           "description": "",
           "sourceRange": {
             "start": {
-              "line": 50,
+              "line": 40,
               "column": 12
             },
             "end": {
-              "line": 54,
+              "line": 44,
               "column": 13
             }
           },

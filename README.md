@@ -1,21 +1,16 @@
-# \<ramen-collection\>
+# Ramen Collection
+a collection of utilities and UI element for Ordent - Ramen Series
 
-
-
-## Install the Polymer-CLI
-
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
-
-## Viewing Your Element
-
+<!--
 ```
-$ polymer serve
+<custom-element-demo>
+  <template>
+    <link rel="import" href="./dist/ramen-button.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
 ```
-
-## Running Tests
-
+-->
+```html
+<ramen-button class="primary" flat raised>Button</ramen-button>
 ```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
