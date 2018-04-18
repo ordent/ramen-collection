@@ -8,7 +8,6 @@
     "paper-dialog-scrollable": "^2.2.0",
     "paper-icon-button": "^2.2.0",
     "iron-icons": "^2.1.1",
-    "animejs": "^2.2.0",
     "iron-component-page": "^3.0.1"
   },
   "devDependencies": {

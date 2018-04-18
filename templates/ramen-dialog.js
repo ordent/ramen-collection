@@ -155,6 +155,14 @@ class RamenDialog extends Polymer.mixinBehaviors([Polymer.PaperDialogBehavior], 
         this.addEventListener('iron-overlay-closed', this._dialogClosed);
         super.disconnectedCallback();
     }
+    _computedList(list){
+        if(Array.isArray(list)){
+            if(list.length>0){
+                return true;
+            }
+        }
+        return false;
+    }
     _computeTitle(val){
         if(val == null){
             return false;
