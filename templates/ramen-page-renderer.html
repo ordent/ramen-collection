@@ -2,12 +2,9 @@
 <script>
     RamenPageRenderer = function(sc){
         return class extends sc{
-            constructor(){
-                super();
-            }
 
             convertQuillToHtml(data){
-                if(data){
+                if(data != undefined && data != null){
                     let content = "";
                     let flag = false;
                     try{
