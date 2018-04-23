@@ -103,7 +103,7 @@ gulp.task('json', function () {
 
 gulp.task('dist', function(){
 	return gulp.src('./src/*.html')
-		.pipe(replace('../bower_components/', '../../'))
+		.pipe(replace('../bower_components/', '../'))
 		.pipe(gulp.dest('./'));
 });
 
