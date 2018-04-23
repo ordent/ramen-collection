@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+
+<dom-module id="ramen-single-upload">
+    <template>
+        <style>
+            /* <%= css %> /* END OF CSS */
+        </style>
+        <template is="dom-if" if="[[view]]">
+            <div class="view-image-wrapper">
+                <iron-image id="viewImage" class="view-image" src="[[srcView]]" fade preload sizing="contain"></iron-image>
+            </div>
+        </template>
+        <div class="input-button-wrapper">
+            <input is="iron-input" id="fileInput" class="file-input" bind-value="{{src}}" type="file" on-change="actionChange" accept="[[accept]]">
+            <button class="input-button" tabindex="-1" id="inputButton">[[inputButtonText]]</button>
+        </div>
+        
+        <template is="dom-if" if=[[urlView]]>
+            <div class="result-wrapper">
+                [[src]]
+            </div>
+        </template>
+        
+        <iron-ajax id="uploadElement"></iron-ajax>
+        <paper-dialog id="dialog" modal>
+            <paper-spinner active></paper-spinner>
+            <h6><slot>The file is now being uploaded.</slot></h6>
+        </paper-dialog>
+    </template>
+    </template>
+
+    <script>
+        /* <%= js %> /* END OF JS */
+    </script>
+</dom-module>

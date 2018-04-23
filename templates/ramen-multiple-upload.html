@@ -1,0 +1,58 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../src/ramen-button.html">
+<dom-module id="ramen-multiple-upload">
+    <template>
+        <style>
+            /* <%= css %> /* END OF CSS */
+        </style>
+        <div class="input-wrapper">
+            <div class="input-button-wrapper">
+                <!-- <paper-input type="file" class="file-input" id="fileInput"></paper-input> -->
+                <input is="iron-input" id="fileInput" class="file-input" bind-value="{{src}}" type="file" on-change="actionChange" accept="[[accept]]"
+                    multiple>
+                <!-- <paper-button id="inputButton" on-tap="actionInputButton" class="input-button" raised>[[inputButtonText]]</paper-button> -->
+                <button class="input-button" tabindex="-1" id="inputButton">PILIH GAMBAR . . .</button>
+            </div>
+            <ramen-button class="upload-button ghost primary" on-tap="actionUpload">Upload</ramen-button>
+        </div>
+        <template is="dom-if" if="[[_isActive(files.splices)]]">
+            <div class="result-wrapper">
+                <template is="dom-repeat" items="[[files]]" as="item">
+                    
+                    <template is="dom-if" if="[[_isIdle(item.status, item.uploading)]]">
+                        <paper-item>[[item.data.name]] <paper-icon-button icon="icons:delete" class="result-button-delete" on-tap="actionDelete"></paper-icon-button></paper-item>
+                    </template>
+                    
+                    <template is="dom-if" if="[[_isUploading(item.status, item.uploading)]]">
+                        <paper-item>[[item.data.name]] <div class="spinner-wrapper">
+                            <paper-spinner active></paper-spinner>
+                        </div></paper-item>
+                    </template>
+                    
+                    <template is="dom-if" if="[[_isCompleted(item.status, item.uploading)]]">
+                        <paper-item>[[item.url]] 
+                            <a href="[[item.url]]" class="result-status-wrapper">
+                                <div class="result-status-completed">
+                                    <span>Upload Completed</span>
+                                </div>
+                            </a>
+                        </paper-item>
+                    </template>
+                </template>
+            </div>
+        </template>
+        <iron-ajax id="uploadElement"></iron-ajax>
+
+
+    </template>
+    <script>
+        /* <%= js %> /* END OF JS */
+    </script>
+</dom-module>

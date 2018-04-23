@@ -10,7 +10,7 @@
 
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../bower_components/iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../quill-playground.html">
+    <link rel="import" href="../src/ramen-single-upload.html">
 
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
@@ -22,10 +22,10 @@
   </head>
   <body>
     <div class="vertical-section-container centered">
-      <h3>Basic Ramen Page Renderer demo</h3>
+      <h3>Basic Ramen Single Upload demo</h3>
       <demo-snippet>
         <template>
-          <quill-playground></quill-playground>
+          <ramen-single-upload view url-view upload-attribute="files" upload-url="https://api.devi.id/api/files"></ramen-single-upload>
         </template>
       </demo-snippet>
     </div>

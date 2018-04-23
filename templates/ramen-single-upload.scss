@@ -1,0 +1,61 @@
+/*! CSS START */
+@import '../styles/variables';
+:host{
+    display: block;
+    --view-width: 200px;
+    --view-height: 200px;
+    --input-button-background: #{$primary-color};
+    --input-button-color: #{$light-text-color};
+}
+.view-image-wrapper {
+    text-align: center;
+}
+.view-image {
+    width: var(--view-width);
+    height: var(--view-height);
+    background: #cccccc;
+    max-width: 100%;
+}
+.file-input {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+}
+.file-input[disabled]{
+    cursor: default;
+}
+.input-button-wrapper {
+    margin-top: 20px;
+    position: relative;
+    min-height: 50px;
+}
+.input-button {
+    background: var(--input-button-background);
+    color: var(--input-button-color);
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 2px;
+    border: 0;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.input-button[disabled]{
+    background: #aaaaaa;
+    color: white;
+}
+#dialog{
+    text-align: center;
+    border: #1E88E5 1px solid;
+}
+.result-wrapper{
+    overflow-x: scroll;
+    color: #555555;
+    font-size: 0.9em;
+}

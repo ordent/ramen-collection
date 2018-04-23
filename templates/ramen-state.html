@@ -1,0 +1,36 @@
+<script src="../bower_components/redux.min/index.js" type="text/javascript" async onload="dependencyCompleted()"></script>
+<link rel="import" href="../bower_components/polymer-redux/polymer-redux.html">
+<script type="text/javascript">
+    window.ramen = {};
+    if(!window.config || !window.config.initialState){
+        window.ramen.initialState = {
+            authorization: {
+                user: {},
+                token: "",
+                isLoggedIn: false
+            },
+            config: {
+                environment: "development"
+            }
+        }
+    }else{
+        window.ramen.initialState = window.config.initialState;
+    }
+    window.ramen.currentState = window.ramen.initialState;
+    window.ramen.reducer = (state, action) => {
+        if(!window.config || !window.config.reducer){
+            if(!state) return window.ramen.initialState;
+            switch (action.type){
+                default:
+                    return state;
+            }
+        }else{
+            return window.config.reducer(state, action);
+        }
+    }
+    
+    let dependencyCompleted = (e) => {
+        window.ramen.store = Redux.createStore(window.ramen.reducer);
+        window.ramen.stateMixin = PolymerRedux(window.ramen.store);
+    }
+</script>
