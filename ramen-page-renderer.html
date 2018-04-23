@@ -8,11 +8,24 @@
 
             convertQuillToHtml(data){
                 if(data){
-                    let editor = document.createElement("div");
-                    let quill = new Quill(editor);
-                    quill.setContents(JSON.parse(data));
-                    let html = editor.querySelector(".ql-editor").innerHTML;
-                    let result = html;
+                    let content = "";
+                    let flag = false;
+                    try{
+                        content = JSON.parse(data);
+                        flag = true;
+                    }catch(e){
+                        content = data;
+                    }
+                    let result = "";
+                    if(flag){
+                        let editor = document.createElement("div");
+                        let quill = new Quill(editor);
+                        quill.setContents(content);
+                        result = editor.querySelector(".ql-editor").innerHTML;
+                    }else{
+                        result = content;
+                    }
+                    
                     return result;
                 }
                 return false;
